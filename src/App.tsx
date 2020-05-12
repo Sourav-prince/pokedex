@@ -1,10 +1,8 @@
 import React from 'react';
-
+import MainLayout from './components/layout/layout'
 function App() {
   return (
-    <div className="App">
-      working
-    </div>
+    <MainLayout/>
   );
 }
 

@@ -3,7 +3,7 @@ import MainLayout from './components/layout/layout'
 
 function App() {
   return (
-      <MainLayout/>
+    <MainLayout/>
   );
 }
 

@@ -1,9 +1,13 @@
 /* eslint-disable no-use-before-define */
-import React from 'react';
+import React, {useEffect} from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+//redux
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import {setPokemonList,savePokemonData} from "../../reducers/reducer";
+const Searcher = (props:any) => {
 
-export default function ComboBox() {
   return (
     <Autocomplete
       id="combo-box-demo"
@@ -14,6 +18,15 @@ export default function ComboBox() {
     />
   );
 }
+
+export default connect(
+  state => ({
+    appstate:state
+  }),
+  dispatch => ({
+    savePokemonData: bindActionCreators(savePokemonData, dispatch)
+  })
+)(Searcher);
 
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
 const top100Films = [

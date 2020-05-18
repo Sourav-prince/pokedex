@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) =>
       textAlign: "center",
       [theme.breakpoints.down(600)]: {
         width: "15%",
-        bottom: "15%",
+        bottom: "16%",
         left: "15%",
         fontSize: "1em",
       }
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: "1.2em",
       color: "greenyellow",
       [theme.breakpoints.down(600)]: {
-        top: "33%",
+        top: "34%",
         left: "61%",
         fontSize: "0.6em",
       }
@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: "1.2em",
       color: "greenyellow",
       [theme.breakpoints.down(600)]: {
-        top: "40%",
+        top: "41%",
         left: "61%",
         fontSize: "0.6em",
       }
@@ -55,8 +55,8 @@ const useStyles = makeStyles((theme: Theme) =>
       top: "142px",
       left: "109px",
       [theme.breakpoints.down(600)]: {
-        height: "60px",
-        width: "60px",
+        height: "70px",
+        width: "70px",
         top: "30%",
         left: "18%",
       }

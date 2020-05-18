@@ -12,6 +12,9 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     container: {
       padding: theme.spacing(5),
+      [theme.breakpoints.down(600)]: {
+        padding: theme.spacing(1)
+      }
     }
   }),
 );

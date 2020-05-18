@@ -27,10 +27,10 @@ const MainContainer = () => {
         alignItems="center"
         spacing={3}
       >
-        <Grid item xs={8}>
+        <Grid item sm={12} md={8}>
           <Pokedex/>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item sm={12} md={4}>
           <Searcher/>
         </Grid>
       </Grid>

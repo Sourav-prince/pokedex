@@ -16,28 +16,55 @@ const useStyles = makeStyles((theme: Theme) =>
       left: "92px",
       fontSize: "1.5em",
       width: "89px",
-      textAlign: "center"
+      textAlign: "center",
+      [theme.breakpoints.down(600)]: {
+        width: "15%",
+        bottom: "15%",
+        left: "15%",
+        fontSize: "1em",
+      }
     },
     name: {
       position: "absolute",
       top: "155px",
       left: "367px",
       fontSize: "1.2em",
-      color: "greenyellow"
+      color: "greenyellow",
+      [theme.breakpoints.down(600)]: {
+        top: "33%",
+        left: "61%",
+        fontSize: "0.6em",
+      }
     },
     type: {
       position: "absolute",
       top: "187px",
       left: "367px",
       fontSize: "1.2em",
-      color: "greenyellow"
+      color: "greenyellow",
+      [theme.breakpoints.down(600)]: {
+        top: "40%",
+        left: "61%",
+        fontSize: "0.6em",
+      }
     },
     pokeimg: {
       position: "absolute",
       height: "115px",
       width: "115px",
       top: "142px",
-      left: "109px"
+      left: "109px",
+      [theme.breakpoints.down(600)]: {
+        height: "60px",
+        width: "60px",
+        top: "30%",
+        left: "18%",
+      }
+    },
+    mainImg: {
+      [theme.breakpoints.down(600)]: {
+        width: "100%",
+      }
     }
   }),
 );
@@ -48,7 +75,7 @@ const Pokedex = (props:any) => {
 
   return(
     <div className={classes.pokedexContainer}>
-      <img src={pokedexImg}/>
+      <img className={classes.mainImg} src={pokedexImg}/>
       { 
         appstate.pokemon_data != null &&
         <>
@@ -56,7 +83,7 @@ const Pokedex = (props:any) => {
             src={appstate.pokemon_data.sprites.front_default} 
            />
           <div className={classes.rank}>{appstate.pokemon_data.id}</div>
-          <div className={classes.name}>Name:{appstate.pokemon_data.name}</div>
+          <div className={classes.name}>{appstate.pokemon_data.name}</div>
           <div className={classes.type}>
             {
               appstate.pokemon_data.types.map((v:any)=>v.type.name+" ")

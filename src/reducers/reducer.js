@@ -5,12 +5,13 @@ const SET_POKEMON_LIST = "SET_POKEMON_LIST"
 const SET_POKEMON_LIST_LOADING = "SET_POKEMON_LIST_LOADING"
 const SET_POKEMON_DATA = "SET_POKEMON_DATA"
 const SET_POKEMON_DATA_LOADING = "SET_POKEMON_DATA_LOADING"
-
+const SIDEBAR_OPEN = "SIDEBAR_OPEN"
 const initialState = {
   pokemon_list: null,
   pokemon_data: null,
   pokemon_list_getting: false,
   pokemon_data_getting: false,
+  sidebar_open: false
 }
 
 export const setPokemonList = (data) => {
@@ -37,6 +38,13 @@ export const savePokemonData = (data) => {
 export const setPokemonDataLoading = (data) => {
   return {
     type: SET_POKEMON_DATA_LOADING,
+    data
+  }
+}
+//sidebar
+export const setSidebar = (data) => {
+  return {
+    type: SIDEBAR_OPEN,
     data
   }
 }
@@ -91,6 +99,11 @@ export default function reducer(state = initialState, action = {}) {
       return {
         ...state,
         pokemon_data_getting: action.data
+      }
+    case SIDEBAR_OPEN:
+      return {
+        ...state,
+        sidebar_open: action.data
       }
     default:
       return state;

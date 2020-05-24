@@ -7,6 +7,10 @@ import InputBase from '@material-ui/core/InputBase';
 import { createStyles, fade, Theme, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
+//redux
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import {setSidebar} from "../../reducers/reducer";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -65,7 +69,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const MainAppBar = () => {
+const MainAppBar = (props:any) => {
   const classes = useStyles();
 
   return (
@@ -77,6 +81,7 @@ const MainAppBar = () => {
             className={classes.menuButton}
             color="inherit"
             aria-label="open drawer"
+            onClick={()=>{props.setSidebar(true)}}
           >
             <MenuIcon />
           </IconButton>
@@ -101,4 +106,11 @@ const MainAppBar = () => {
     </div>
   );
 }
-export default MainAppBar;
+export default connect(
+  state => ({
+    appstate: state
+  }),
+  dispatch => ({
+    setSidebar: bindActionCreators(setSidebar, dispatch)
+  })
+)(MainAppBar);
